@@ -1,0 +1,17 @@
+{
+  "name": "i2ctmp",
+  "version": "0.0.1",
+  "description": "i2c test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "i2c"
+  ],
+  "author": "bfv",
+  "license": "ISC",
+  "dependencies": {
+    "i2c-bus": "^3.0.0"
+  }
+}
