@@ -52,8 +52,20 @@ function calcPressure(msb, csb, lsb) {
   var tempWord = i2c1.readWordSync(MPL3115A2_ADDR, 0x04);
 
   /* console.log('pressure bytes:', p_msb, p_csb, p_lsb); */
-  console.log('pressure:', calcPressure(p_msb, p_csb, p_lsb).toFixed(4), 'hPa');
-  console.log('temp:', toCelsius(tempWord) + '\u00B0' + 'C');
+
+  var output = {
+    pressure: calcPressure(p_msb, p_csb, p_lsb).toFixed(4) + ' hPa',
+    temperature: toCelsius(tempWord) + '\u00B0' + 'C',
+    time: new Date().toISOString()
+  };
+
+  // console.log('temperature: ', output.temperature);
+  // console.log('pressure:    ', output.pressure);
+  // console.log('time:        ', output.time);
+
+  console.log(output.temperature);
+  console.log(output.pressure);
+  console.log(output.time);
 
   i2c1.closeSync();
 
